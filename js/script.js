@@ -83,10 +83,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 showLoading("#main-content");
 $ajaxUtils.sendGetRequest(
   allCategoriesUrl, buildAndShowHomeHTML,
-  function(buildAndShowHomeHTML) {
-	document.querySelector("#main-content")
-		.innerHTML = buildAndShowHomeHTML;
-	},// ***** <---- TODO: STEP 1: Substitute [...] ******
+// ***** <---- TODO: STEP 1: Substitute [...] ******
   true); // Explicitely setting the flag to get JSON from server processed into an object literal
 });
 // *** finish **
@@ -119,9 +116,9 @@ var chosenCategoryShortName = chooseRandomCategory(categories);
       // it into the home html snippet.
       //
 	  
-var sn = "'" + chosenCategoryShortName.short_name "'";
+var sn = "'{{" + chosenCategoryShortName.short_name + "}}'";
 
-var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", sn);
+var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "{{randomCategoryShortName}}", sn);
 
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
