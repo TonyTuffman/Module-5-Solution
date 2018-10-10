@@ -118,7 +118,7 @@ var chosenCategoryShortName = chooseRandomCategory(categories);
 	  
 var sn = "('{{" + chosenCategoryShortName.short_name + "}}')";
 
-var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", sn);
+var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "{{randomCategoryShortName}}", sn);
 
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
